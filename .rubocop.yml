@@ -1,11 +1,27 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
 AllCops:
-  Exclude:
-    - 'Gemfile'
+  EnabledByDefault: true
+  TargetRubyVersion: 3.2.2
+  SuggestExtensions: false
+
+Bundler/GemComment:
+  Enabled: false
+
+RuboCopBundler/GemVersion:
+  Enabled: false
+
 
 Layout/FirstArrayElementIndentation:
   Enabled: false
 
-Style/SymbolArray:
+Layout/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
   Enabled: false
 
 Metrics/BlockLength:
@@ -13,29 +29,29 @@ Metrics/BlockLength:
     - spec/**/*
   Max: 30
 
-Naming/MethodParameterName:
-  Enabled: false
-
-Naming/AccessorMethodName:
-  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-
-Metrics/PerceivedComplexity:
-  Max: 10
-
 Metrics/CyclomaticComplexity:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Metrics/AbcSize:
   Enabled: false
 
 Metrics/MethodLength:
   Max: 30
 
-Layout/LineLength:
-  Max: 150
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
