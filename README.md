@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
+Ruby, NodeJS and PostgresQL versions are defined in `.tool-versions`. If you are using asdf as a version manager install the relevant versions with `asdf install`
 
-Things you may want to cover:
+- Install gems: `bundle install`
+- Ensure database server is running: `pg_ctl start`
+- Create database: `rails db:create`
+- Run migrations: `rails db:migrate`
 
-* Ruby version
+## Running locally
+- Build JS files (and watch for changes): `yarn build --watch`
+- Run rails server in a separate terminal: `rails s`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application should be running on `http://localhost:3000/`
