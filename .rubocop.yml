@@ -21,6 +21,9 @@ Layout/FirstArrayElementIndentation:
 Layout/LineLength:
   Max: 120
 
+Lint/ConstantResolution:
+  Enabled: false
+
 Metrics/AbcSize:
   Enabled: false
 
@@ -41,7 +44,14 @@ Metrics/PerceivedComplexity:
 Naming/AccessorMethodName:
   Enabled: false
 
+
 Naming/MethodParameterName:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Rails/SchemaComment:
   Enabled: false
 
 Style/Copyright:
@@ -50,7 +60,13 @@ Style/Copyright:
 Style/Documentation:
   Enabled: false
 
+Style/DocumentationMethod:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
   Enabled: false
 
 Style/SymbolArray:
