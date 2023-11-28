@@ -1,73 +1,23 @@
 require:
+  - standard
   - rubocop-rails
   - rubocop-rspec
   - rubocop-performance
+
+# Use the defaults from https://github.com/testdouble/standard
+inherit_gem:
+  standard: config/ruby-3.2.yml
+
+inherit_from:
+  - .rubocop_local.yml
 
 AllCops:
   EnabledByDefault: true
   TargetRubyVersion: 3.2.2
   SuggestExtensions: false
-
-Bundler/GemComment:
-  Enabled: false
-
-RuboCopBundler/GemVersion:
-  Enabled: false
-
-
-Layout/FirstArrayElementIndentation:
-  Enabled: false
-
-Layout/LineLength:
-  Max: 120
-
-Lint/ConstantResolution:
-  Enabled: false
-
-Metrics/AbcSize:
-  Enabled: false
-
-Metrics/BlockLength:
   Exclude:
-    - spec/**/*
-  Max: 30
-
-Metrics/CyclomaticComplexity:
-  Enabled: false
-
-Metrics/MethodLength:
-  Max: 30
-
-Metrics/PerceivedComplexity:
-  Max: 10
-
-Naming/AccessorMethodName:
-  Enabled: false
-
-
-Naming/MethodParameterName:
-  Enabled: false
-
-Rails/Output:
-  Enabled: false
-
-Rails/SchemaComment:
-  Enabled: false
-
-Style/Copyright:
-  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-
-Style/DocumentationMethod:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/MethodCallWithArgsParentheses:
-  Enabled: false
-
-Style/SymbolArray:
-  Enabled: false
+    - tmp/**/*
+    - vendor/**/*
+    - Brewfile
+    - db/schema.rb
+    - bin/**/*
