@@ -1,2 +1,14 @@
 Rails/SchemaComment:
   Enabled: false
+
+RSpec/ExampleLength:
+  Max: 40
+
+RSpec/Rails/HttpStatus:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Rails/HttpStatus:
+  Enabled: false
