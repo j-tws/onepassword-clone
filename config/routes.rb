@@ -10,4 +10,10 @@ Rails.application.routes.draw do
 
   # Private
   get "home/app"
+
+  get "api/records/index"
+  get "api/records/:id", to: "api/records#show"
+  post "api/records", to: "api/records#create"
+  put "api/records/:id", to: "api/records#update"
+  delete "api/records/:id", to: "api/records#destroy"
 end
