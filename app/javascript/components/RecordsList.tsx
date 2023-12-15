@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export const Records = () => {
+export const RecordsList = () => {
   const [records, setRecords] = useState([])
 
   useEffect(() => {
@@ -17,11 +17,8 @@ export const Records = () => {
       .catch((error) => console.error(error))
   }, [])
 
-  console.log(records)
-
   return (
     <>
-      <h2>Greetings! Here are all records in the database</h2>
       <ul>
         {records.map(({ id, title }) => {
           return (

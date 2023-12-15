@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   post "api/records", to: "api/records#create"
   put "api/records/:id", to: "api/records#update"
   delete "api/records/:id", to: "api/records#destroy"
+
+  get "*path", to: "home#app"
 end
