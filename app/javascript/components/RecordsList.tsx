@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-export const RecordsList = () => {
-  const [records, setRecords] = useState([])
+interface Record {
+  id: number
+  title: string
+}
 
-  useEffect(() => {
-    fetch('http://localhost:3000/api/records/index', {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setRecords(data))
-      .catch((error) => console.error(error))
-  }, [])
+interface RecordsListProps {
+  records: Record[]
+}
 
+export const RecordsList = ({ records }: RecordsListProps) => {
   return (
     <>
       <ul>
