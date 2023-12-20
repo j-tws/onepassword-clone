@@ -24,7 +24,6 @@ export const HomeApp = () => {
       <h1>Welcome to NonePassword</h1>
       <h2>These are your passwords:</h2>
       <RecordsList records={records} />
-      <Link to={'/records/new'}>Create new record</Link>
     </>
   )
 }
