@@ -1,14 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Records } from '../components/Records'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { HomeApp } from '../containers/HomeApp'
+import { Nav } from '../components/Nav'
+import { RecordForm } from '../containers/RecordForm'
 
-const App = () => (
-  <>
-    <h1>Hello from React! This should be logged in only</h1>
-    <Records />
-  </>
-)
+const router = createBrowserRouter([
+  {
+    path: '/home/app',
+    element: <HomeApp />,
+  },
+  {
+    path: '/records/new',
+    element: <RecordForm />,
+  },
+])
 
 const root = ReactDOM.createRoot(document.getElementById('app') as HTMLElement)
 
-root.render(<App />)
+root.render(
+  <>
+    <Nav />
+    <RouterProvider router={router} />
+  </>,
+)

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { RecordsList } from '../components/RecordsList'
+import { Link } from 'react-router-dom'
 
-export const Records = () => {
+export const HomeApp = () => {
   const [records, setRecords] = useState([])
 
   useEffect(() => {
@@ -17,20 +19,11 @@ export const Records = () => {
       .catch((error) => console.error(error))
   }, [])
 
-  console.log(records)
-
   return (
     <>
-      <h2>Greetings! Here are all records in the database</h2>
-      <ul>
-        {records.map(({ id, title }) => {
-          return (
-            <li key={id}>
-              ID: {id}, TITLE: {title}
-            </li>
-          )
-        })}
-      </ul>
+      <h1>Welcome to NonePassword</h1>
+      <h2>These are your passwords:</h2>
+      <RecordsList records={records} />
     </>
   )
 }
