@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { HomeApp } from '../containers/HomeApp'
 import { Nav } from '../components/Nav'
 import { RecordForm } from '../containers/RecordForm'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,9 @@ const root = ReactDOM.createRoot(document.getElementById('app') as HTMLElement)
 
 root.render(
   <>
-    <Nav />
-    <RouterProvider router={router} />
+    <ChakraProvider>
+      <Nav />
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </>,
 )

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Heading, Container, Input, Box, Button } from '@chakra-ui/react'
 
 export const RecordForm = () => {
   const [title, setTitle] = useState('')
@@ -47,12 +48,22 @@ export const RecordForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Title:</label>
-        <input type="text" onChange={handleChange} />
-      </div>
-      <input type="submit" value="Create record" disabled={isFetching} />
-    </form>
+    <Container pt={5}>
+      <Heading as="h1">Create new password</Heading>
+      <form onSubmit={handleSubmit}>
+        <Box mt={3}>
+          <label>Title:</label>
+          <Input
+            mt={2}
+            placeholder="Enter title here"
+            size="md"
+            onChange={handleChange}
+          />
+        </Box>
+        <Button mt={2} colorScheme="teal" isLoading={isFetching} type="submit">
+          Create Record
+        </Button>
+      </form>
+    </Container>
   )
 }

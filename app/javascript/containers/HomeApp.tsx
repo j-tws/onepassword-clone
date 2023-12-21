@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { RecordsList } from '../components/RecordsList'
-import { Link } from 'react-router-dom'
+import { Heading, Text, Container } from '@chakra-ui/react'
 
 export const HomeApp = () => {
   const [records, setRecords] = useState([])
@@ -21,9 +21,11 @@ export const HomeApp = () => {
 
   return (
     <>
-      <h1>Welcome to NonePassword</h1>
-      <h2>These are your passwords:</h2>
-      <RecordsList records={records} />
+      <Container p={5}>
+        <Heading as="h1">Welcome to NonePassword</Heading>
+        <Text fontSize="lg">These are your passwords:</Text>
+        <RecordsList records={records} />
+      </Container>
     </>
   )
 }
