@@ -1,12 +1,30 @@
 import React from 'react'
+import { Box } from '@chakra-ui/react'
 
-interface Record {
-  id: number
+interface RecordsListProps {
+  records: {
+    id: number
+    title: string
+  }[]
+}
+
+interface RecordProps {
   title: string
 }
 
-interface RecordsListProps {
-  records: Record[]
+const Record = ({ title }: RecordProps) => {
+  return (
+    <Box
+      w="100%"
+      m={2}
+      p={4}
+      border={'1px'}
+      borderColor={'gray.200'}
+      borderRadius={'md'}
+    >
+      {title}
+    </Box>
+  )
 }
 
 export const RecordsList = ({ records }: RecordsListProps) => {
@@ -14,11 +32,7 @@ export const RecordsList = ({ records }: RecordsListProps) => {
     <>
       <ul>
         {records.map(({ id, title }) => {
-          return (
-            <li key={id}>
-              ID: {id}, TITLE: {title}
-            </li>
-          )
+          return <Record key={id} title={title} />
         })}
       </ul>
     </>
