@@ -3,7 +3,7 @@ module Api
     before_action :find_record, only: [:show, :update, :destroy]
 
     def index
-      render json: current_user.records
+      render json: current_user.records.reverse
     end
 
     def show
