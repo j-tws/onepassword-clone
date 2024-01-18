@@ -14,8 +14,8 @@ RSpec.describe "Api::Records" do
 
       body = response.parsed_body
       expect(body.length).to eq(2)
-      expect(body.first["title"]).to eq("facebook")
-      expect(body.second["title"]).to eq("google")
+      expect(body.first["title"]).to eq("google")
+      expect(body.second["title"]).to eq("facebook")
     end
   end
 
